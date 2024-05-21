@@ -21,11 +21,11 @@
                     </x-form-field>
 
                     <div class="sm:col-span-4">
-                        <label for="salary" class="block text-sm font-medium leading-6 text-gray-900">Salary</label>
+                        
                         <div class="mt-2">
 
                             <x-form-field>
-                                <x-form-lable for="title">Title</x-form-lable>
+                                <x-form-lable for="title">Salary</x-form-lable>
                                 <div class="mt-2">
                                     <x-form-input name="salary" id="salary" placeholder="$50,000" required />
                                     <x-form-error name="title" />

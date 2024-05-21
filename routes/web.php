@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
@@ -17,4 +18,5 @@ Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
 
 Route::view('/contact', 'contact');
 
-
+//Auth
+Route::get('/register', [RegisteredUserController::class, 'create']);
