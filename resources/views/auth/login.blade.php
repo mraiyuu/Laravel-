@@ -3,7 +3,7 @@
         Register
     </x-slot:heading>
 
-    <form method="POST" action="/register">
+    <form method="POST" action="/login">
         @csrf
 
         <div class="space-y-12">
@@ -14,29 +14,6 @@
 
 
                     <div class="sm:col-span-4">
-
-                        <div class="mt-0">
-
-                            <x-form-field>
-                                <x-form-lable for="first_name">First Name</x-form-lable>
-                                <div class="mt-2">
-                                    <x-form-input name="first_name" id="first_name" required />
-                                    <x-form-error name="first_name" />
-                                </div>
-                            </x-form-field>
-
-                            <x-form-field>
-                                <x-form-lable for="last_name">Last Name</x-form-lable>
-                                <div class="mt-2">
-                                    <x-form-input name="slast_name" id="last_name" required />
-                                    <x-form-error name="last_name" />
-                                </div>
-                            </x-form-field>
-
-                            @error('last_name')
-                            <p class="text-xm text-red-500 font-semibold">{{ $message}}</p>
-                            @enderror
-                        </div>
 
                         <div class="mt-2">
 
@@ -70,17 +47,7 @@
 
                         <div class="mt-2">
 
-                            <x-form-field>
-                                <x-form-lable for="password_confirm">Confirm password</x-form-lable>
-                                <div class="mt-2">
-                                    <x-form-input name="spassword_confirm" id="password_confirm" type="password" />
-                                    <x-form-error name="password_confirm" />
-                                </div>
-                            </x-form-field>
 
-                            @error('password_confirm')
-                            <p class="text-xm text-red-500 font-semibold">{{ $message}}</p>
-                            @enderror
                         </div>
                     </div>
                 </div>

@@ -9,4 +9,8 @@ class RegisteredUserController extends Controller
     public function create() {
         return view('auth.register');
     }
+
+    public function store () {
+        dd('login APi working');
+    }
 }
