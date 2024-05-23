@@ -28,14 +28,12 @@
                             <x-form-field>
                                 <x-form-lable for="last_name">Last Name</x-form-lable>
                                 <div class="mt-2">
-                                    <x-form-input name="slast_name" id="last_name" required />
+                                    <x-form-input name="last_name" id="last_name" required />
                                     <x-form-error name="last_name" />
                                 </div>
                             </x-form-field>
 
-                            @error('last_name')
-                            <p class="text-xm text-red-500 font-semibold">{{ $message}}</p>
-                            @enderror
+                            
                         </div>
 
                         <div class="mt-2">
@@ -48,9 +46,7 @@
                                 </div>
                             </x-form-field>
 
-                            @error('email')
-                            <p class="text-xm text-red-500 font-semibold">{{ $message}}</p>
-                            @enderror
+                           
                         </div>
 
                         <div class="mt-2">
@@ -63,9 +59,7 @@
                                 </div>
                             </x-form-field>
 
-                            @error('password')
-                            <p class="text-xm text-red-500 font-semibold">{{ $message}}</p>
-                            @enderror
+                            
                         </div>
 
                         <div class="mt-2">
@@ -78,9 +72,6 @@
                                 </div>
                             </x-form-field>
 
-                            @error('password_confirm')
-                            <p class="text-xm text-red-500 font-semibold">{{ $message}}</p>
-                            @enderror
                         </div>
                     </div>
                 </div>

@@ -20,14 +20,12 @@
                             <x-form-field>
                                 <x-form-lable for="email">Email</x-form-lable>
                                 <div class="mt-2">
-                                    <x-form-input name="email" type="email" id="email" required />
+                                    <x-form-input name="email" type="email" id="email" :value="old('email')" required />
                                     <x-form-error name="email" />
                                 </div>
                             </x-form-field>
 
-                            @error('email')
-                            <p class="text-xm text-red-500 font-semibold">{{ $message}}</p>
-                            @enderror
+
                         </div>
 
                         <div class="mt-2">
@@ -40,9 +38,6 @@
                                 </div>
                             </x-form-field>
 
-                            @error('password')
-                            <p class="text-xm text-red-500 font-semibold">{{ $message}}</p>
-                            @enderror
                         </div>
 
                         <div class="mt-2">
