@@ -7,6 +7,9 @@ use App\Models\Job;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\JobPosted;
+
 
 class JobController extends Controller
 {
@@ -34,27 +37,24 @@ class JobController extends Controller
             'salary' => ['required'],
         ]);
 
-        Job::create([
+        $job = Job::create([
             'title' => request('title'),
             'salary' => request('salary'),
             'employer_id' => 1,
         ]);
+
+        Mail::to($job->employer->user)->send(new JobPosted($job));
+
 
         return redirect('/jobs');
     }
 
     public function edit(Job $job)
     {
-        Gate::define('edit-job', function (User $user, Job $job) {
-           return $job->employer->user->is($user);
-                
-        });
 
-        if(Auth::guest()) {
-            return redirect('/login');
-        }
-        Gate::authorize('edit-job', $job);
-        
+
+
+
         return view('jobs.edit', ['job' => $job]);
     }
 
